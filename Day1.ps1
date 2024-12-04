@@ -1003,12 +1003,13 @@ $lists = @'
 $list1 = [System.Collections.Generic.List[uint32]]::new()
 $list2 = [System.Collections.Generic.List[uint32]]::new()
 $totalDistance, $simScore = 0
-foreach ($line in $lists)
-{
+
+foreach ($line in $lists) {
     $item1, $item2 = $line.split(' ', [System.StringSplitOptions]::RemoveEmptyEntries)
     $list1.add($item1)
     $list2.add($item2)
 }
+
 $list1.Sort()
 $list2.Sort()
 $group = $list2 | Group-Object
