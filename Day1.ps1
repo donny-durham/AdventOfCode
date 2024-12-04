@@ -1011,6 +1011,7 @@ foreach ($line in $lists)
 }
 $list1.Sort()
 $list2.Sort()
+$group = $list2 | Group-Object
 
 for ($i = 0; $i -lt $list1.Count; $i++) {
     $totalDistance += [int]::max($list1[$i], $list2[$i]) - [int]::min($list1[$i], $list2[$i])
